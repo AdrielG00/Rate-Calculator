@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>TP Email Updates</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
 
-</style>
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <script src="backend.js"></script> <link rel="stylesheet" href="stylesheet.css">
+<head>
+  <title>TP Email Updates</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script src="backend.js">
+   document.getElementById("result").innerHTML = localStorage.getItem("arsAdd"); //ehhhh
+  </script>
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
+
 <body>
 
-<div class="topnav">
-  <a href="rchome.html">Rate Calculator</a>
-  <a href="#">Email Updates</a>
-  <a href="dispatching.html">Dispatching</a>
-  
-</div>
+  <div class="topnav">
+    <a href="rchome.html">Rate Calculator</a>
+    <a href="#">Email Updates</a>
+    <a href="dispatching.html">Dispatching</a>
 
-<div class="content">
-   <p class="title">Service Request Received:</p> 
+  </div>
+
+  <div class="content">
+    <p class="title">Service Request Received:</p>
     Hello, <br>
     We have received your service request and we are working on this now.<br>
-    We will update you shortly with the ETA.<br> 
+    We will update you shortly with the ETA.<br>
     Thank you!<br><br>
-    
+
     <p class="title">ETA Update / Vendor Dispatched</p>
     Hello,<br>
     We have dispatched our service provider with an ETA of 00 minutes. <br>
     We will keep you updated with the status of this service.<br>
     Thank you!<br><br>
+      
     
+
     <p class="title">Vendor On Scene:</p>
     Hello,<br>
     Our service provider is currently on scene.<br>
     We will keep you updated with the status of this service.<br>
     Thank you!<br><br>
-    
+
     <p class="title">Unit Picked Up:</p>
     Hello,<br>
     This unit has been picked up and is in tow to delivery.<br>
     We will follow up once the service has been completed. <br>
     Thank you!<br><br>
-    
+
     <p class="title">Service Completed / Unit Delivered:</p>
     Hello,
     We have confirmed that the service is completed. <br>
     Please let us know if there is anything else we can assist with. <br>
     Thank you!<br>
-    
 
 
 
-   
-      
+
+
+
   </div>
-</div>
+  </div>
 
 </body>
+
 </html>
-
-
