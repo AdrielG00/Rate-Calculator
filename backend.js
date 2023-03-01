@@ -1,5 +1,3 @@
-//this is a test
-
 let total = 0;
 let arsTotal = 0;
 let addTotal = 0;
