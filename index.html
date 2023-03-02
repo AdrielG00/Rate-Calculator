@@ -21,102 +21,114 @@
     <a href="dispatching.html">Dispatching</a>
 
   </div>
- 
-    <label for="client">Client:</label>
-    <select id="client">
-      <option value="ars">ARS</option>
-      <option value="aaa">AAA</option>
-      <option value="other">Other</option>
-    </select>
 
-    <label for="service-type">Service Type:</label>
-    <select id="type">
-      <option value="tow">Tow</option>
-      <option value="winch">Winch</option>
-      <option value="accident">Accident</option>
-      <option value="rework">Rework</option>
-      <option value="tire">Tire</option>
-      <option value="transload">Transload</option>
-    </select>
+  <label for="client">Client:</label>
+  <select id="client">
+    <option value="ars">ARS</option>
+    <option value="aaa">AAA</option>
+    <option value="other">Other</option>
+  </select>
 
-    <label for="state">State:</label>
-    <select id="state">
-      <option value="AK">Alaska</option>
-      <option value="AL">Alabama</option>
-      <option value="AR">Arkansas</option>
-      <option value="AZ">Arizona</option>
-      <option value="CA">California</option>
-      <option value="CO">Colorado</option>
-      <option value="CT">Connecticut</option>
-      <option value="DE">Delaware</option>
-      <option value="FL">Florida</option>
-      <option value="GA">Georgia</option>
-      <option value="HI">Hawaii</option>
-      <option value="IA">Iowa</option>
-      <option value="ID">Idaho</option>
-      <option value="IL">Illinois</option>
-      <option value="IN">Indiana</option>
-      <option value="KS">Kansas</option>
-      <option value="KY">Kentucky</option>
-      <option value="LA">Louisana</option>
-      <option value="MA">Massachusets</option>
-      <option value="MD">Maryland</option>
-      <option value="ME">Maine</option>
-      <option value="MI">Michigan</option>
-      <option value="MN">Minnesota</option>
-      <option value="MO">Missouri</option>
-      <option value="MS">Mississippi</option>
-      <option value="MT">Montana</option>
-      <option value="NC">North Carolina</option>
-      <option value="ND">North Dakota</option>
-      <option value="NE">Nebraska</option>
-      <option value="NH">New Hampshire</option>
-      <option value="NJ">New Jersey</option>
-      <option value="NM">New Mexico</option>
-      <option value="NV">Nevada</option>
-      <option value="NY">New York</option>
-      <option value="OH">Ohio</option>
-      <option value=OK">Oklahoma</option>
-      <option value="OR">Oregon</option>
-      <option value="PA">Pennsylvania</option>
-      <option value="RI">Rhode Island</option>
-      <option value="SC">South Caroline</option>
-      <option value="SD">South Dakota</option>
-      <option value="TN">Tennessee</option>
-      <option value="TX">Texas</option>
-      <option value="UT">Utah</option>
-      <option value="VA">Virginia</option>
-      <option value="VT">Vermont</option>
-      <option value="WA">Washington</option>
-      <option value="WI">Wisconsin</option>
-      <option value="WV">West Virginia</option>
-      <option value="WY">Wyoming</option>
-    </select>
+  <label for="service-type">Service Type:</label>
+  <select id="type">
+    <option value="tow">Tow</option>
+    <option value="winch">Winch</option>
+    <option value="accident">Accident</option>
+    <option value="rework">Rework</option>
+    <option value="tire">Tire</option>
+    <option value="transload">Transload</option>
+  </select>
 
-    <label for="vehicle-type">Vehicle Type:</label>
-    <select id="vehicle-type">
-      <option value="ld">LD</option>
-      <option value="md">MD</option>
-      <option value="hd">HD</option>
-      <option value="md-rv">MD-RV</option>
-      <option value="hd-rv">HD-RV</option>
-      <option value="diesel-pusher-rv">Diesel Pusher-RV</option>
-      <option value="semi-combination">Semi Combination</option>
-      <option value="truck-or-trailer-only">Truck or Trailer Only</option>
-    </select>
-    <label for="miles">Miles:</label>
-    <input type="number" id="miles" placeholder="Enter miles">
-    <button onclick="calculate()">Calculate</button>
-    <button onclick="reset()">Reset</button>
-    <br>
+  <label for="state">State:</label>
+  <select id="state">
+    <option value="AK">Alaska</option>
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="AZ">Arizona</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="IA">Iowa</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisana</option>
+    <option value="MA">Massachusets</option>
+    <option value="MD">Maryland</option>
+    <option value="ME">Maine</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MO">Missouri</option>
+    <option value="MS">Mississippi</option>
+    <option value="MT">Montana</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="NE">Nebraska</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NV">Nevada</option>
+    <option value="NY">New York</option>
+    <option value="OH">Ohio</option>
+    <option value=OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Caroline</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VA">Virginia</option>
+    <option value="VT">Vermont</option>
+    <option value="WA">Washington</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WV">West Virginia</option>
+    <option value="WY">Wyoming</option>
+  </select>
 
+  <label for="vehicle-type">Vehicle Type:</label>
+  <select id="vehicle-type">
+    <option value="ld">LD</option>
+    <option value="md">MD</option>
+    <option value="hd">HD</option>
+    <option value="md-rv">MD-RV</option>
+    <option value="hd-rv">HD-RV</option>
+    <option value="diesel-pusher-rv">Diesel Pusher-RV</option>
+    <option value="semi-combination">Semi Combination</option>
+    <option value="truck-or-trailer-only">Truck or Trailer Only</option>
+  </select>
+  <label for="miles">Miles:</label>
+  <input type="number" id="miles" placeholder="Enter miles">
+  <button onclick="calculate()">Calculate</button>
+  <button onclick="reset()">Reset</button>
+  <br>
+
+  <div class="float-container">
+    <div class="float-child">
+      <p id="ars-results">ARS Paid Rate: $<text id="ars-rate">0.00</text><br>
+        <text id="aaa-coverage">AAA Coverage: $500</text>
+
+    </div>
+    <div class="float-child">
+      <p id="results">Target Price Goal: $<text id="total-cost">0.00 </text><br>
+        <text class="over-results">Over TPG by: <text id="over-tpg">$0.00</text>
+    </div>
     <div class="float-container">
-      <div class="float-child"><p id="results">Target Price Goal: $<text id="total-cost">0.00 </text></div>
-    <div class="float-child"> <p id="ars-results">ARS Paid Rate: $<text id="ars-rate">0.00</text></div>
-   
-      <div id="negotiate"></div>
+      <div class="float-child">
+        <text id="new-ars-rate">
+      </div>
+      <div class="float-child">
+      <text id="negotiate">
+      </div>
     </div><br></p>
-  
+
 
   </div>
 
@@ -132,7 +144,7 @@
     <button id="aaaoopfund" onclick="getOOPFunds()">AAA - Check If Approved</button><br>
     <br>
 
-    <div class="over-results">Over TPG by: <text id="over-tpg">$0.00</text><br></div><br>
+
     <div class="float container">
       <div class="float-child">AAA OOP Cost: <text id="oop-cost">$0.00</text></p>
       </div>
