@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head></head>
-  <title>TP Rate Calculator</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+<title>TP Rate Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-  </style>
+</style>
 
-  <script src="backend.js"></script>
-  <link rel="stylesheet" href="stylesheet.css">
+<script src="backend.js"></script>
+<link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
@@ -21,8 +21,7 @@
     <a href="dispatching.html">Dispatching</a>
 
   </div>
-
-  <div class="content2">
+ 
     <label for="client">Client:</label>
     <select id="client">
       <option value="ars">ARS</option>
@@ -109,36 +108,46 @@
     <input type="number" id="miles" placeholder="Enter miles">
     <button onclick="calculate()">Calculate</button>
     <button onclick="reset()">Reset</button>
-  </div><br>
-  <div id="results">Target Price Goal: $<text id="total-cost">0.00 </text></div><br>
-  <div id="ars-results">ARS Paid Rate: $<text id="ars-rate">0.00</text></div><br>
-  <div id="negotiate"></div><br>
+    <br>
+
+    <div class="float-container">
+      <div class="float-child"><p id="results">Target Price Goal: $<text id="total-cost">0.00 </text></div>
+    <div class="float-child"> <p id="ars-results">ARS Paid Rate: $<text id="ars-rate">0.00</text></div>
+   
+      <div id="negotiate"></div>
+    </div><br></p>
+  
 
   </div>
 
+
+  </div>
 
   <div class="footer">
-    <div id="second-row">
+    <label for="miles">Vendor Quote:</label>
+    <input type="number" id="quote" placeholder="Enter quote">
+    <label for="etaMin">Vendor ETA:</label>
+    <input type="number" id="eta" placeholder="Enter ETA">
+    <button id="arsaddfunds" onclick="getAdditionalFunds()">ARS - Check If Approved</button>
+    <button id="aaaoopfund" onclick="getOOPFunds()">AAA - Check If Approved</button><br>
+    <br>
 
-      <label for="miles">Vendor Quote:</label>
-      <input type="number" id="quote" placeholder="Enter quote">
-      <label for="etaMin">Vendor ETA:</label>
-      <input type="number" id="eta" placeholder="Enter ETA">
-      <button id="arsaddfunds" onclick="getAdditionalFunds()">ARS - Check If Approved</button>
-      <button id="aaaoopfund" onclick="getOOPFunds()">AAA - Check If Approved</button>
-    </div><br>
-
-    <div id="over-results">Over TPG by: <text id="over-tpg">$0.00</text></div><br>
-    <div id="oop-results">AAA OOP Cost: <text id="oop-cost">$0.00</text></div>
-    <div id="add-results">ARS Funds Needed: <text id="add-cost">$0.00</text></div><br>
-    <div id="new-ars-rate">
-
-    
-    <div id="disclaimer">
-
+    <div class="over-results">Over TPG by: <text id="over-tpg">$0.00</text><br></div><br>
+    <div class="float container">
+      <div class="float-child">AAA OOP Cost: <text id="oop-cost">$0.00</text></p>
+      </div>
+      <div class="float-child">ARS Funds Needed: <text id="add-cost">$0.00</text><br></p>
+      </div>
     </div>
-  </div>
 
+    <div id="new-ars-rate"></div>
+
+
+    <div id="disclaimer"></div>
+
+
+
+  </div>
 </body>
 
 </html>
