@@ -8,7 +8,6 @@ let wasArsApproved = "yes";
 //calculates ars rate per state & tpg 
 function calculate() {
   const client = document.getElementById("client").value;
-  const weightClass = document.getElementById("vehicle-type").value;
   const state = document.getElementById("state").value;
   const vehicleType = document.getElementById("vehicle-type").value;
   const miles = parseInt(document.getElementById("miles").value);
@@ -804,6 +803,12 @@ function calculate() {
           	"The job pays $${total}, how soon can you get there?"<br>
           	"How close to $${total} can we get on this one?"<br>
           	"Will $${total} get this job done?"`;
+            vendorHelp = `Vendor Tips<br>
+    If a vendor cannot help, ask who they recommend to help.<br>
+    If the delivery is a shop - call the shop for a vendor recommendation<br>
+    Utilize resources if unable to locate a vendor from TP list - geo code, google, NTTS<br>
+    Check with your team lead for recommendations`;
+    document.getElementById("vendor-tips").innerHTML = vendorHelp;
     document.getElementById("negotiate").innerHTML = dispatch;
     document.getElementById("total-cost").innerHTML = total;
     document.getElementById("ars-rate").innerHTML = arsTotal;
@@ -844,6 +849,12 @@ function calculate() {
           	"The job pays $${total}, how soon can we have this done?"<br>
           	"How close to $${total} can we get on this one?"<br>
           	"Will $${total} get this job done?"`;
+    vendorHelp = `Vendor Tips<br>
+    If a vendor cannot help, ask who they recommend to help.<br>
+    If the delivery is a shop - call the shop for a vendor recommendation<br>
+    Utilize resources if unable to locate a vendor from TP list - geo code, google, NTTS<br>
+    Check with your team lead for recommendations`;
+    document.getElementById("new-ars-rate").innerHTML = vendorHelp;
     document.getElementById("negotiate").innerHTML = dispatch;
     document.getElementById("total-cost").innerHTML = total;
     document.getElementById("ars-rate").innerHTML = "0.00";
@@ -941,10 +952,12 @@ function getOOPFunds() {
 function reset() {
   localStorage.clear();
   document.getElementById("oop-cost").innerHTML = "0.00";
+  document.getElementById("over-tpg").innerHTML = "0.00";
   document.getElementById("add-cost").innerHTML = "0.00";
   document.getElementById("ars-rate").innerHTML = "0.00";
   document.getElementById("total-cost").innerHTML = "0.00";
   document.getElementById("negotiate").innerHTML = "";
+  document.getElementById("vendor-tips").innerHTML = "";
   var elements = document.getElementsByTagName("input");
   document.getElementById("oop-cost").style.color = "black";
   document.getElementById("add-cost").style.color = "black";
