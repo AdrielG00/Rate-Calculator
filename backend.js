@@ -3,7 +3,7 @@ let arsTotal = 0;
 let addTotal = 0;
 let dispatch = 0;
 let oopCost = 0;
-let wasArsApproved = "yes";
+let dispatchNote = "";
 
 //calculates ars rate per state & tpg 
 function calculate() {
@@ -888,14 +888,12 @@ function getAdditionalFunds() {
     document.getElementById("oop-cost").style.color = "black";
     localStorage.removeItem("aaaoop");
     document.getElementById("add-cost").style.color = "green";
-    addTotal = `No Additional Funds needed - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!`;
-    arsApproval = `<label for="vehicle-type">Vehicle Type:</label>
-    <select id="vehicle-type">`
+    addTotal = `No Additional Funds needed - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
+  
   }
 
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("oop-cost").innerHTML = oopCost;
-
 }
 
 //function for ars approved funds calculations and notes
@@ -941,7 +939,7 @@ function getOOPFunds() {
     document.getElementById("add-cost").style.color = "black";
     localStorage.setItem("aaaoop", "0.00");
     document.getElementById("oop-cost").style.color = "green";
-    oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!`;
+    oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   }
 
   document.getElementById("over-tpg").innerHTML = totalOverTpg;
