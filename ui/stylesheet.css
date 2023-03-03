@@ -16,6 +16,13 @@
     overflow: hidden;
     background-color: #54a1e0;
   }
+
+  .sidenav {
+    overflow: hidden;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+  }
   
   /* Style the topnav links */
   .topnav a {
