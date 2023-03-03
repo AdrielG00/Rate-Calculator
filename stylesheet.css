@@ -64,7 +64,23 @@
 
 }  
 
+.red-text {
+  color: red;
+}
 
+.grid-parent {
+  display: grid;
+  float: left;
+  padding: 25px;
+
+}
+.grid-child {
+  border: white;
+  padding: 25px;
+}
+.accident-container {
+font-size: 18px;
+  }
 
 
 

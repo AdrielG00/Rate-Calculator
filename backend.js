@@ -798,16 +798,18 @@ function calculate() {
     }
     localStorage.setItem("tpg", total);
     localStorage.setItem("arsTotal", arsTotal);
-    dispatch = `Dispatching<br>
-          	Make the initial offer & negotiate!<br>
-          	"The job pays $${total}, how soon can you get there?"<br>
-          	"How close to $${total} can we get on this one?"<br>
-          	"Will $${total} get this job done?"`;
-            vendorHelp = `Vendor Tips<br>
-    If a vendor cannot help, ask who they recommend to help.<br>
-    If the delivery is a shop - call the shop for a vendor recommendation<br>
-    Utilize resources if unable to locate a vendor from TP list - geo code, google, NTTS<br>
-    Check with your team lead for recommendations`;
+    dispatch = `*Dispatching*<br>
+    Make the initial offer & negotiate!<br>
+    "The job pays $${total}, how soon can you get there?"<br>
+    "How close to $${total} can we get on this one?"<br>
+    "Will $${total} get this job done?"<br>
+    ***Make sure this is all in cost(tax, fuel surcharge, cc fee)***`;
+    vendorHelp = `*Vendor Tips*<br>
+    -If the move is in a split tow state, expect higher quotes.<br>
+    -If the rate is hourly, try to have them agree on an hourly threshold.<br>
+    -If a vendor cannot help, ask who they recommend to help.<br>
+    -If the delivery is a shop - call the shop for a vendor recommendation.<br>
+    -Look for outside vendors(google) if there is limited availability.`;
     document.getElementById("vendor-tips").innerHTML = vendorHelp;
     document.getElementById("negotiate").innerHTML = dispatch;
     document.getElementById("total-cost").innerHTML = total;
