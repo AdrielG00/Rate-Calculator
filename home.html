@@ -146,14 +146,16 @@
     <input type="number" id="quote" placeholder="Enter quote">
     <label for="etaMin">Vendor ETA:</label>
     <input type="number" id="eta" placeholder="Enter ETA">
-    <button id="arsaddfunds" onclick="getAdditionalFunds()">ARS - Check If Approved</button>
-    <button id="aaaoopfund" onclick="getOOPFunds()">AAA - Check If Approved</button><br>
+    <button id="overage-check" onclick="overages()">Check for Overages</button>
+    <br>
+
     <br>
   </div>
 
 
   <div class="float container">
-    <div class="float-child">AAA OOP Cost: <text id="oop-cost">$0.00</text>
+    <div class="float-child">AAA OOP Cost: <text id="oop-cost">$0.00</text><br>
+      <text id="dispatch-disc"></text>
     </div>
     <div class="float-child">ARS Funds Needed: <text id="add-cost">$0.00</text><br>
     </div>

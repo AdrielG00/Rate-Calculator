@@ -15,6 +15,7 @@
   .topnav {
     overflow: hidden;
     background-color: #54a1e0;
+    width: 100%;
   }
 
   .sidenav {

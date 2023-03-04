@@ -850,15 +850,17 @@ function calculate() {
           	Make the initial offer & negotiate!<br>
           	"The job pays $${total}, how soon can we have this done?"<br>
           	"How close to $${total} can we get on this one?"<br>
-          	"Will $${total} get this job done?"`;
-    vendorHelp = `Vendor Tips<br>
-    If a vendor cannot help, ask who they recommend to help.<br>
-    If the delivery is a shop - call the shop for a vendor recommendation<br>
-    Utilize resources if unable to locate a vendor from TP list - geo code, google, NTTS<br>
-    Check with your team lead for recommendations`;
-    document.getElementById("new-ars-rate").innerHTML = vendorHelp;
+          	"Will $${total} get this job done?"<br>
+            ***Make sure this is all in cost(tax, fuel surcharge, cc fee)***`;
+    vendorHelp = `*Vendor Tips*<br>
+    -If the move is in a split tow state, expect higher quotes.<br>
+    -If the rate is hourly, try to have them agree on an hourly threshold.<br>
+    -If a vendor cannot help, ask who they recommend to help.<br>
+    -If the delivery is a shop - call the shop for a vendor recommendation.<br>
+    -Look for outside vendors(google) if there is limited availability.`;
     document.getElementById("negotiate").innerHTML = dispatch;
     document.getElementById("total-cost").innerHTML = total;
+    document.getElementById("vendor-tips").innerHTML = vendorHelp;
     document.getElementById("ars-rate").innerHTML = "0.00";
   }
 }
@@ -876,6 +878,7 @@ function getAdditionalFunds() {
     addTotal = `$${addTotal2}`;
     localStorage.setItem("arsAdd", addTotal);
     oopCost = "0.00";
+    dispatchDisclaimer = "";
     localStorage.removeItem("aaaoop");
     document.getElementById("oop-cost").style.color = "black";
     totalOverTpg = quote - total;
@@ -885,11 +888,12 @@ function getAdditionalFunds() {
     totalOverTpg = quote - total;
     document.getElementById("over-tpg").innerHTML = totalOverTpg;
     oopCost = "0.00";
+    dispatchDisclaimer = "";
     document.getElementById("oop-cost").style.color = "black";
     localStorage.removeItem("aaaoop");
     document.getElementById("add-cost").style.color = "green";
     addTotal = `No Additional Funds needed - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
-  
+
   }
 
   document.getElementById("add-cost").innerHTML = addTotal;
@@ -923,9 +927,8 @@ function getOOPFunds() {
     ccFee = addCost * .035;
     addTotal3 = addCost + ccFee;
     oopCost = `$` + `${addTotal3}`;
-    localStorage.setItem("aaaoop", oopCost);
     addTotal = "0.00";
-    localStorage.removeItem("arsTotal");
+    dispatchDisclaimer = "";
     document.getElementById("add-cost").style.color = "black";
     totalOverTpg = quote - total;
     document.getElementById("over-tpg").innerHTML = totalOverTpg;
@@ -935,9 +938,8 @@ function getOOPFunds() {
     totalOverTpg = quote - total;
     document.getElementById("over-tpg").innerHTML = totalOverTpg;
     addTotal = "0.00";
-    localStorage.removeItem("arsAdd");
+    dispatchDisclaimer = "";
     document.getElementById("add-cost").style.color = "black";
-    localStorage.setItem("aaaoop", "0.00");
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   }
@@ -946,6 +948,32 @@ function getOOPFunds() {
   document.getElementById("oop-cost").innerHTML = oopCost;
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("add-cost").style.color = "black";
+}
+
+function overages() {
+  const quote = parseInt(document.getElementById("quote").value);
+  const client = document.getElementById("client").value;
+  const eta = document.getElementById("eta").value;
+  switch (client) {
+    case "ars":
+      getAdditionalFunds();
+      break;
+    case "aaa":
+      getOOPFunds();
+      break;
+    case "other":
+      addTotal = "0.00";
+      oopCost = "0.00";
+      document.getElementById("oop-cost").innerHTML = oopCost;
+      document.getElementById("oop-cost").style.color = "black";
+      document.getElementById("add-cost").innerHTML = addTotal;
+      document.getElementById("add-cost").style.color = "black";
+      dispatchDisclaimer = `If you are over TPG - Make sure you get quote approval from a Team Lead or Management.  If not, Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
+      break;
+  }
+
+  document.getElementById("dispatch-disc").innerHTML = dispatchDisclaimer;
+  document.getElementById("dispatch-disc").style.color = "green";
 }
 
 //function for reset button
@@ -961,6 +989,8 @@ function reset() {
   var elements = document.getElementsByTagName("input");
   document.getElementById("oop-cost").style.color = "black";
   document.getElementById("add-cost").style.color = "black";
+  document.getElementById("dispatch-disc").style.color = "black";
+  document.getElementById("dispatch-disc").innerHTML = "";
   for (var i = 0; i < elements.length; i++) {
     elements[i].value = "";
 
