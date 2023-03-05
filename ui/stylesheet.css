@@ -1,76 +1,78 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;;
-  }
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  ;
+}
 
-  body {
-    margin: 10px;
-    padding: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-  }
-  
-  /* Style the top navigation bar */
-  .topnav {
-    overflow: hidden;
-    background-color: #54a1e0;
-    width: 100%;
-  }
+body {
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
 
-  .sidenav {
-    overflow: hidden;
-    background-color: white;
-    margin-top: 10px;
-    float: left;
-  }
-  
-  /* Style the topnav links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change color on hover */
-  .topnav a:hover {
-    background-color: white;
-    color: black;
-  }
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #54a1e0;
+  width: 100%;
+}
 
-  /* Style the footer */
+.sidenav {
+  display: grid;
+  width: 25%;
+  background-color: white;
+  margin-top: 10px;
+  float: left;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Style the footer */
 .footer {
-    background-color: #f2f2f2;
-    padding: 2px;
-    width: 100%;
-    font-family: 'Open Sans', sans-serif;
-  }
+  background-color: #f2f2f2;
+  padding: 2px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
 
-  .title{
-    font-size: 25px;
+.title {
+  font-size: 25px;
 }
 
 /* Style the content */
 .content {
-    background-color: white;
-    padding: 2px;
-    font-size: 14px;
-  }
+  background-color: white;
+  padding: 2px;
+  font-size: 14px;
+}
 
-  .float-container {
-    padding: 20px;
+.float-container {
+  padding: 20px;
 
 }
 
 .float-child {
-    width: 50%;
-    float: left;
-    padding: 20px;
+  width: 50%;
+  float: left;
+  padding: 20px;
 
-}  
+}
 
 .red-text {
   color: red;
@@ -82,13 +84,15 @@
   padding: 25px;
 
 }
+
 .grid-child {
   border: white;
   padding: 25px;
 }
+
 .accident-container {
-font-size: 18px;
-  }
+  font-size: 18px;
+}
 
 .disc {
   text-align: center;
@@ -113,4 +117,32 @@ font-size: 18px;
 .cheat-sheet-body {
   padding-left: 30px;
   margin-left: 30px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.15em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #3369ff;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+}
+
+a.button6:active {
+  top: 0.1em;
+}
+
+@media all and (max-width:30em) {
+  a.button6 {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
