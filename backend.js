@@ -902,10 +902,14 @@ function getAdditionalFunds() {
 
 //function for ars approved funds calculations and notes
 function arsAddApproval() {
-  newArsRate = arsTotal + addTotal2;
+  const addCost = document.getElementById("add-cost").value;
+  const arsRate = document.getElementById("ars-rate").value;
+  const weightClass = document.getElementById("vehicle-type").value;
+
+  newArsRate = addCost + arsRate;
   arsAddNotes = `Contracted Rate: ${arsTotal}<br>
   Weight Class = ${weightClass}<br>
-  Overage Requested: ${addTotal}<br>
+  Overage Requested: ${addCost}<br>
   Total Client Quote: ${newArsRate}<br>
   Approved By:`;
   document.getElementById("new-ars-rate").innerHTML = arsAddNotes;
