@@ -1249,12 +1249,14 @@ function getOOPFunds() {
 function collectedOOP() {
   const addCost = document.getElementById("oop-cost");
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  profit = totalCollected - quote;
+  profitMargin = profit.toFixed(2);
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
   AAA Coverage = $500 (only for RV legacy customers)<br>
   OOP Collected: ${oopCost}<br> 
   Total Collected: $${totalCollected}<br>
-  Profit: $${totalCollected - quote} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
+  Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
 }
