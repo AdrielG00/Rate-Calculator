@@ -4,6 +4,8 @@ let addTotal = 0;
 let dispatch = 0;
 let oopCost = 0;
 let dispatchNote = "";
+let addCost = 0;
+let newArsRate = 0;
 
 
 //calculates ars rate per state & tpg 
@@ -758,38 +760,338 @@ function calculate() {
           arsTotal = miles * 8.5 + 605;
         }
         if (state === "TN") {
-          arsTotal = miles * 8.25 + 605;
+          arsTotal = miles * 8.50 + 605;
         }
         if (state === "TX") {
-          arsTotal = miles * 8.25 + 425; //FINISH DIESEL PUSHERS!!!!
+          arsTotal = miles * 8.50 + 605; //FINISH DIESEL PUSHERS!!!!
         }
         if (state === "UT") {
-          arsTotal = miles * 7 + 395;
+          arsTotal = miles * 8 + 585;
         }
         if (state === "VA") {
-          arsTotal = miles * 7 + 385;
+          arsTotal = miles * 9 + 585;
         }
         if (state === "VT") {
-          arsTotal = miles * 8 + 415;
+          arsTotal = miles * 8.50 + 605;
         }
         if (state === "WA") {
-          arsTotal = miles * 8 + 415;
+          arsTotal = miles * 8.50 + 605;
         }
         if (state === "WI") {
-          arsTotal = miles * 7 + 385;
+          arsTotal = miles * 8 + 605;
         }
         if (state === "WV") {
-          arsTotal = miles * 7 + 385;
+          arsTotal = miles * 8.50 + 605;
         }
         if (state === "WY") {
-          arsTotal = miles * 8.25 + 450;
+          arsTotal = miles * 8.50 + 605;
         }
         total = miles * 7 + 350;
         break;
       case "semi-combination": //fix this as well
+        if (state === "AK") {
+          arsTotal = miles * 7.5 + 415;
+        }
+        if (state === "AL") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "AR") {
+          arsTotal = miles * 8 + 350;
+        }
+        if (state === "AZ") {
+          arsTotal = miles * 8 + 380;
+        }
+        if (state === "CA") {
+          arsTotal = miles * 7.45 + 400;
+        }
+        if (state === "CO") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "CT") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "DE") {
+          arsTotal = miles * 7.50 + 380;
+        }
+        if (state === "FL") {
+          arsTotal = miles * 7.5 + 345;
+        }
+        if (state === "GA") {
+          arsTotal = miles * 6.5 + 355;
+        }
+        if (state === "HI") {
+          arsTotal = miles * 8 + 365;
+        }
+        if (state === "IA") {
+          arsTotal = miles * 7 + 365;
+        }
+        if (state === "ID") {
+          arsTotal = miles * 7.5 + 405;
+        }
+        if (state === "IL") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "IN") {
+          arsTotal = miles * 7 + 385;
+        }
+        if (state === "KS") {
+          arsTotal = miles * 7.5 + 350;
+        }
+        if (state === "KY") {
+          arsTotal = miles * 7.5 + 405;
+        }
+        if (state === "LA") {
+          arsTotal = miles * 7.25 + 340;
+        }
+        if (state === "MA") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "MD") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "ME") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "MI") {
+          arsTotal = miles * 8 + 365;
+        }
+        if (state === "MN") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "MO") {
+          arsTotal = miles * 7.5 + 315;
+        }
+        if (state === "MS") {
+          arsTotal = miles * 7.5 + 365;
+        }
+        if (state === "MT") {
+          arsTotal = miles * 8.25 + 440;
+        }
+        if (state === "NC") {
+          arsTotal = miles * 7 + 360;
+        }
+        if (state === "ND") {
+          arsTotal = miles * 8.25 + 440;
+        }
+        if (state === "NE") {
+          arsTotal = miles * 7.5 + 415;
+        }
+        if (state === "NH") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "NJ") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "NM") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "NV") {
+          arsTotal = miles * 8 + 380;
+        }
+        if (state === "NY") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "OH") {
+          arsTotal = miles * 7.5 + 390;
+        }
+        if (state === "OK") {
+          arsTotal = miles * 7.5 + 315;
+        }
+        if (state === "OR") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "PA") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "RI") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "SC") {
+          arsTotal = miles * 7 + 340;
+        }
+        if (state === "SD") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "TN") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "TX") {
+          arsTotal = miles * 8.25 + 415;
+        }
+        if (state === "UT") {
+          arsTotal = miles * 7 + 385;
+        }
+        if (state === "VA") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "VT") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "WA") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "WI") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "WV") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "WY") {
+          arsTotal = miles * 8.25 + 440;
+        }
         total = miles * 7.5 + 250;
         break;
       case "truck-or-trailer-only": // finish this as well
+        if (state === "AK") {
+          arsTotal = miles * 7.5 + 415;
+        }
+        if (state === "AL") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "AR") {
+          arsTotal = miles * 8 + 350;
+        }
+        if (state === "AZ") {
+          arsTotal = miles * 8 + 380;
+        }
+        if (state === "CA") {
+          arsTotal = miles * 7.45 + 400;
+        }
+        if (state === "CO") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "CT") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "DE") {
+          arsTotal = miles * 7.50 + 380;
+        }
+        if (state === "FL") {
+          arsTotal = miles * 7.5 + 345;
+        }
+        if (state === "GA") {
+          arsTotal = miles * 6.5 + 355;
+        }
+        if (state === "HI") {
+          arsTotal = miles * 8 + 365;
+        }
+        if (state === "IA") {
+          arsTotal = miles * 7 + 365;
+        }
+        if (state === "ID") {
+          arsTotal = miles * 7.5 + 405;
+        }
+        if (state === "IL") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "IN") {
+          arsTotal = miles * 7 + 385;
+        }
+        if (state === "KS") {
+          arsTotal = miles * 7.5 + 350;
+        }
+        if (state === "KY") {
+          arsTotal = miles * 7.5 + 405;
+        }
+        if (state === "LA") {
+          arsTotal = miles * 7.25 + 340;
+        }
+        if (state === "MA") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "MD") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "ME") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "MI") {
+          arsTotal = miles * 8 + 365;
+        }
+        if (state === "MN") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "MO") {
+          arsTotal = miles * 7.5 + 315;
+        }
+        if (state === "MS") {
+          arsTotal = miles * 7.5 + 365;
+        }
+        if (state === "MT") {
+          arsTotal = miles * 8.25 + 440;
+        }
+        if (state === "NC") {
+          arsTotal = miles * 7 + 360;
+        }
+        if (state === "ND") {
+          arsTotal = miles * 8.25 + 440;
+        }
+        if (state === "NE") {
+          arsTotal = miles * 7.5 + 415;
+        }
+        if (state === "NH") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "NJ") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "NM") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "NV") {
+          arsTotal = miles * 8 + 380;
+        }
+        if (state === "NY") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "OH") {
+          arsTotal = miles * 7.5 + 390;
+        }
+        if (state === "OK") {
+          arsTotal = miles * 7.5 + 315;
+        }
+        if (state === "OR") {
+          arsTotal = miles * 8.25 + 425;
+        }
+        if (state === "PA") {
+          arsTotal = miles * 8 + 415;
+        }
+        if (state === "RI") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "SC") {
+          arsTotal = miles * 7 + 340;
+        }
+        if (state === "SD") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "TN") {
+          arsTotal = miles * 8.25 + 340;
+        }
+        if (state === "TX") {
+          arsTotal = miles * 8.25 + 415;
+        }
+        if (state === "UT") {
+          arsTotal = miles * 7 + 385;
+        }
+        if (state === "VA") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "VT") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "WA") {
+          arsTotal = miles * 8 + 405;
+        }
+        if (state === "WI") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "WV") {
+          arsTotal = miles * 7 + 375;
+        }
+        if (state === "WY") {
+          arsTotal = miles * 8.25 + 440;
+        }
         total = miles * 5.5 + 150;
         break;
       default:
@@ -873,12 +1175,14 @@ function getAdditionalFunds() {
   if (arsTotal - quote < 150) {
     document.getElementById("add-cost").style.color = "red";
     addTotal2 = quote - arsTotal + 150;
+    newArsRate = addTotal2 + parseFloat(arsTotal);
     addTotal = `$${addTotal2.toFixed(2)}`;
-    localStorage.setItem("arsAdd", addTotal);
     oopCost = "0.00";
     dispatchDisclaimer = "";
     localStorage.removeItem("aaaoop");
     document.getElementById("oop-cost").style.color = "black";
+    document.getElementById("approved-funds").style.display = "";
+  
   }
   else {
     oopCost = "0.00";
@@ -899,14 +1203,13 @@ function arsAddApproval() {
   const addCost = document.getElementById("add-cost");
   const arsRate = document.getElementById("ars-rate");
   const weightClass = document.getElementById("vehicle-type").value;
-
-  newArsRate = addCost + arsRate;
   arsAddNotes = `Contracted Rate: ${arsTotal}<br>
   Weight Class = ${weightClass}<br>
-  Overage Requested: ${addCost}<br>
+  Overage Requested: ${addTotal}<br>
   Total Client Quote: ${newArsRate}<br>
   Approved By:`;
   document.getElementById("new-ars-rate").innerHTML = arsAddNotes;
+  document.getElementById("ars-disclaimer").style.display = "";
 }
 
 
@@ -969,6 +1272,14 @@ function overages() {
   document.getElementById("dispatch-disc").style.color = "green";
 }
 
+function disclaimer() {
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  const client = document.getElementById("client").value;
+  const eta = document.getElementById("eta").value;
+  dispatchApproved = `We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
+  document.getElementById("ars-dispatch-approved").innerHTML = dispatchApproved;
+}
+
 //function for reset button
 function reset() {
   localStorage.clear();
@@ -976,9 +1287,11 @@ function reset() {
   document.getElementById("over-tpg").innerHTML = "0.00";
   document.getElementById("add-cost").innerHTML = "0.00";
   document.getElementById("ars-rate").innerHTML = "0.00";
+  document.getElementById("new-ars-rate").innerHTML = "";
   document.getElementById("total-cost").innerHTML = "0.00";
   document.getElementById("negotiate").innerHTML = "";
   document.getElementById("vendor-tips").innerHTML = "";
+  document.getElementById("approved-funds").innerHTML= "";
   var elements = document.getElementsByTagName("input");
   document.getElementById("oop-cost").style.color = "black";
   document.getElementById("add-cost").style.color = "black";
