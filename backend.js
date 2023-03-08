@@ -5,16 +5,15 @@ let dispatch = 0;
 let oopCost = 0;
 let dispatchNote = "";
 
+
 //calculates ars rate per state & tpg 
 function calculate() {
   const client = document.getElementById("client").value;
   const state = document.getElementById("state").value;
   const vehicleType = document.getElementById("vehicle-type").value;
-  const miles = parseInt(document.getElementById("miles").value);
-  const quote = parseInt(document.getElementById("quote").value);
-  const eta = parseInt(document.getElementById("eta").value);
+  var miles = parseFloat(document.getElementById("miles").value).toFixed(2);
   let addTotal = 0;
-  let oopCost = 0;
+
 
   if (client === "ars") {
     switch (vehicleType) {
@@ -796,8 +795,8 @@ function calculate() {
       default:
         break;
     }
-    localStorage.setItem("tpg", total);
-    localStorage.setItem("arsTotal", arsTotal);
+    total = total.toFixed(2);
+    arsTotal = arsTotal.toFixed(2);
     dispatch = `*Dispatching*<br>
     Make the initial offer & negotiate!<br>
     "The job pays $${total}, how soon can you get there?"<br>
@@ -814,7 +813,6 @@ function calculate() {
     document.getElementById("negotiate").innerHTML = dispatch;
     document.getElementById("total-cost").innerHTML = total;
     document.getElementById("ars-rate").innerHTML = arsTotal;
-    document.getElementById("add-cost").innerHTML = addTotal;
   }
   else {
     switch (vehicleType) {
@@ -845,7 +843,7 @@ function calculate() {
       default:
         break;
     }
-    localStorage.setItem("total", total);
+    total = total.toFixed(2);
     dispatch = `Dispatching<br>
           	Make the initial offer & negotiate!<br>
           	"The job pays $${total}, how soon can we have this done?"<br>
@@ -867,7 +865,7 @@ function calculate() {
 
 //function to calculate additional funds from ARS if needed - button for ars approval
 function getAdditionalFunds() {
-  const quote = parseInt(document.getElementById("quote").value);
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
   const eta = document.getElementById("eta").value;
   let addTotal2 = 0;
 
@@ -875,18 +873,14 @@ function getAdditionalFunds() {
   if (arsTotal - quote < 150) {
     document.getElementById("add-cost").style.color = "red";
     addTotal2 = quote - arsTotal + 150;
-    addTotal = `$${addTotal2}`;
+    addTotal = `$${addTotal2.toFixed(2)}`;
     localStorage.setItem("arsAdd", addTotal);
     oopCost = "0.00";
     dispatchDisclaimer = "";
     localStorage.removeItem("aaaoop");
     document.getElementById("oop-cost").style.color = "black";
-    totalOverTpg = quote - total;
-    document.getElementById("over-tpg").innerHTML = totalOverTpg;
   }
   else {
-    totalOverTpg = quote - total;
-    document.getElementById("over-tpg").innerHTML = totalOverTpg;
     oopCost = "0.00";
     dispatchDisclaimer = "";
     document.getElementById("oop-cost").style.color = "black";
@@ -902,8 +896,8 @@ function getAdditionalFunds() {
 
 //function for ars approved funds calculations and notes
 function arsAddApproval() {
-  const addCost = document.getElementById("add-cost").value;
-  const arsRate = document.getElementById("ars-rate").value;
+  const addCost = document.getElementById("add-cost");
+  const arsRate = document.getElementById("ars-rate");
   const weightClass = document.getElementById("vehicle-type").value;
 
   newArsRate = addCost + arsRate;
@@ -918,7 +912,7 @@ function arsAddApproval() {
 
 //function to calculate AAA OOP and reset ARS data - button for aaa approval
 function getOOPFunds() {
-  const quote = parseInt(document.getElementById("quote").value);
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
   const client = document.getElementById("client").value;
   const eta = document.getElementById("eta").value;
   let addTotal3 = 0;
@@ -930,32 +924,26 @@ function getOOPFunds() {
     addCost = quote - 500 + 150;
     ccFee = addCost * .035;
     addTotal3 = addCost + ccFee;
-    oopCost = `$` + `${addTotal3}`;
+    oopCost = `$` + `${addTotal3.toFixed(2)}`;
     addTotal = "0.00";
     dispatchDisclaimer = "";
     document.getElementById("add-cost").style.color = "black";
-    totalOverTpg = quote - total;
-    document.getElementById("over-tpg").innerHTML = totalOverTpg;
 
   }
   else {
-    totalOverTpg = quote - total;
-    document.getElementById("over-tpg").innerHTML = totalOverTpg;
     addTotal = "0.00";
     dispatchDisclaimer = "";
     document.getElementById("add-cost").style.color = "black";
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   }
-
-  document.getElementById("over-tpg").innerHTML = totalOverTpg;
   document.getElementById("oop-cost").innerHTML = oopCost;
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("add-cost").style.color = "black";
 }
 
 function overages() {
-  const quote = parseInt(document.getElementById("quote").value);
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
   const client = document.getElementById("client").value;
   const eta = document.getElementById("eta").value;
   switch (client) {
@@ -975,7 +963,8 @@ function overages() {
       dispatchDisclaimer = `If you are over TPG - Make sure you get quote approval from a Team Lead or Management.  If not, Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
       break;
   }
-
+  totalOverTpg = quote - total;
+  document.getElementById("over-tpg").innerHTML = totalOverTpg.toFixed(2);
   document.getElementById("dispatch-disc").innerHTML = dispatchDisclaimer;
   document.getElementById("dispatch-disc").style.color = "green";
 }
