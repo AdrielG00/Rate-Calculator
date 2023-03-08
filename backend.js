@@ -1181,7 +1181,7 @@ function getAdditionalFunds() {
     dispatchDisclaimer = "";
     localStorage.removeItem("aaaoop");
     document.getElementById("oop-cost").style.color = "black";
-    document.getElementById("approved-funds").style.display = "";
+  
   
   }
   else {
@@ -1193,7 +1193,7 @@ function getAdditionalFunds() {
     addTotal = `No Additional Funds needed - Proceed with dispatch.  Make sure to send your dispatch disclaimer along with the email. <br><br> We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
 
   }
-
+  document.getElementById("approved-funds").style.display = "";
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("oop-cost").innerHTML = oopCost;
 }
@@ -1278,27 +1278,4 @@ function disclaimer() {
   const eta = document.getElementById("eta").value;
   dispatchApproved = `We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   document.getElementById("ars-dispatch-approved").innerHTML = dispatchApproved;
-}
-
-//function for reset button
-function reset() {
-  localStorage.clear();
-  document.getElementById("oop-cost").innerHTML = "0.00";
-  document.getElementById("over-tpg").innerHTML = "0.00";
-  document.getElementById("add-cost").innerHTML = "0.00";
-  document.getElementById("ars-rate").innerHTML = "0.00";
-  document.getElementById("new-ars-rate").innerHTML = "";
-  document.getElementById("total-cost").innerHTML = "0.00";
-  document.getElementById("negotiate").innerHTML = "";
-  document.getElementById("vendor-tips").innerHTML = "";
-  document.getElementById("approved-funds").innerHTML= "";
-  var elements = document.getElementsByTagName("input");
-  document.getElementById("oop-cost").style.color = "black";
-  document.getElementById("add-cost").style.color = "black";
-  document.getElementById("dispatch-disc").style.color = "black";
-  document.getElementById("dispatch-disc").innerHTML = "";
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].value = "";
-
-  }
 }
