@@ -6,6 +6,8 @@ let oopCost = 0;
 let dispatchNote = "";
 let addCost = 0;
 let newArsRate = 0;
+let totalCollected = 0;
+let profit = 0;
 
 
 //calculates ars rate per state & tpg 
@@ -1181,8 +1183,8 @@ function getAdditionalFunds() {
     dispatchDisclaimer = "";
     localStorage.removeItem("aaaoop");
     document.getElementById("oop-cost").style.color = "black";
-  
-  
+
+
   }
   else {
     oopCost = "0.00";
@@ -1200,13 +1202,11 @@ function getAdditionalFunds() {
 
 //function for ars approved funds calculations and notes
 function arsAddApproval() {
-  const addCost = document.getElementById("add-cost");
-  const arsRate = document.getElementById("ars-rate");
   const weightClass = document.getElementById("vehicle-type").value;
-  arsAddNotes = `Contracted Rate: ${arsTotal}<br>
+  arsAddNotes = `Contracted Rate: $${arsTotal}<br>
   Weight Class = ${weightClass}<br>
   Overage Requested: ${addTotal}<br>
-  Total Client Quote: ${newArsRate}<br>
+  Total Client Quote: $${newArsRate}<br>
   Approved By:`;
   document.getElementById("new-ars-rate").innerHTML = arsAddNotes;
   document.getElementById("ars-disclaimer").style.display = "";
@@ -1219,7 +1219,6 @@ function getOOPFunds() {
   const client = document.getElementById("client").value;
   const eta = document.getElementById("eta").value;
   let addTotal3 = 0;
-  let oopCost = 0;
 
 
   if (500 - quote < 125) {
@@ -1231,6 +1230,8 @@ function getOOPFunds() {
     addTotal = "0.00";
     dispatchDisclaimer = "";
     document.getElementById("add-cost").style.color = "black";
+    document.getElementById("collect-oop").style.display = "";
+    totalCollected = addTotal3 + 500;
 
   }
   else {
@@ -1243,6 +1244,19 @@ function getOOPFunds() {
   document.getElementById("oop-cost").innerHTML = oopCost;
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("add-cost").style.color = "black";
+}
+
+function collectedOOP() {
+  const addCost = document.getElementById("oop-cost");
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  oopCollectedNotes = `
+  Vendor Cost = $${quote}<br>
+  AAA Coverage = $500 (only for RV legacy customers)<br>
+  OOP Collected: ${oopCost}<br> 
+  Total Collected: $${totalCollected}<br>
+  Profit: $${totalCollected - quote} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
+  document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
+  document.getElementById("aaa-disclaimer").style.display = "";
 }
 
 function overages() {
@@ -1278,4 +1292,12 @@ function disclaimer() {
   const eta = document.getElementById("eta").value;
   dispatchApproved = `We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   document.getElementById("ars-dispatch-approved").innerHTML = dispatchApproved;
+}
+
+function aaaDisclaimer() {
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  const client = document.getElementById("client").value;
+  const eta = document.getElementById("eta").value;
+  dispatchApproved = `We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
+  document.getElementById("aaa-dispatch-approved").innerHTML = dispatchApproved;
 }
