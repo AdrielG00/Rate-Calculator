@@ -1108,7 +1108,7 @@ function collectedOOP() {
   Vendor Cost = $${quote}<br>
   AAA Coverage = $500 (only for RV legacy customers)<br>
   OOP Collected: ${oopCost}<br> 
-  Total Collected: $${totalCollected.toFixed(2)}<br>
+  Total Billing: $${totalCollected.toFixed(2)}<br>
   Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
