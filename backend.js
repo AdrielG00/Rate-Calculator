@@ -23,7 +23,7 @@ function calculate() {
     switch (vehicleType) {
       case "ld":
         total = miles * 3 + 50;
-        arsTotal = "**No LD for ARS**";
+        arsTotal = 0;
         break;
       case "md":
         if (state === "AK") {
