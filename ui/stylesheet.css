@@ -76,6 +76,7 @@ body {
 
 .red-text {
   color: red;
+  font-size: 22px;
 }
 
 .grid-parent {
@@ -110,6 +111,7 @@ body {
 
 .red-text-accident {
   color: red;
+  font-size: 22px;
   padding-left: 30px;
   margin-left: 30px;
 }
