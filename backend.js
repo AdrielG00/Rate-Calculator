@@ -794,7 +794,7 @@ function calculate() {
         if (state !== "") {
           arsTotal = 0;
         }
-       total = miles * 7.5 + 250;
+        total = miles * 7.5 + 250;
         break;
       case "truck-or-trailer-only": // finish this as well
         if (state === "AK") {
@@ -1156,3 +1156,50 @@ function aaaDisclaimer() {
   dispatchApproved = `We are dispatching this unit for tow for $${quote} all in with a ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed. On delivery, send your invoice to ersinvoices@transitpros.com for payment. Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   document.getElementById("aaa-dispatch-approved").innerHTML = dispatchApproved;
 }
+
+function sendEmail() {
+  const orderid = document.getElementById("orderid").value;
+  const pupcity = document.getElementById("pucity").value;
+  const pupstate = document.getElementById("pustate").value;
+  const pupzip = document.getElementById("puzip").value;
+  const delcity = document.getElementById("ducity").value;
+  const delstate = document.getElementById("dustate").value;
+  const delzip = document.getElementById("duzip").value;
+  const payment = document.getElementById("payment").value;
+  const availdate = document.getElementById("availdate").value;
+  const ldate = document.getElementById("ldate").value;
+  const veh = document.getElementById("veh").value;
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "adrielgdev@gmail.com",
+    Password: "CF847B36E8185E98BB184D1C63DD738B0DCA",
+    To: "adriel.guallar@transitpros.com",
+    From: "adrielgdev@gmail.com",
+    Subject: "",
+    Body: `UID(7uP58y56)*ADD*${orderid},${pupcity},${pupstate},${pupzip},${delcity},${delstate},${delzip},${payment},0.00,check,quickpay,none,open,operable,${availdate},${ldate},ladder rack and tools,||||${veh}*`
+  }).then(
+    message => alert(message)
+  );
+  ;
+}
+
+/*
+function sendEmail() {
+  const emailTo = 'cdupd-v4@centraldispatch.com'
+const emailCC = 'adriel.guallar@transitpros.com'
+const emailSub = ''
+  const orderid = document.getElementById("orderid").value;
+  const pupcity = document.getElementById("pucity").value;
+  const pupstate = document.getElementById("pustate").value;
+  const pupzip = document.getElementById("puzip").value;
+  const delcity = document.getElementById("ducity").value;
+  const delstate = document.getElementById("dustate").value;
+  const delzip = document.getElementById("duzip").value;
+  const payment = document.getElementById("payment").value;
+  const availdate = document.getElementById("availdate").value;
+  const ldate = document.getElementById("ldate").value;
+  const veh = document.getElementById("veh").value;
+  const emailBody = `UID(7uP58y56)*ADD*${orderid},${pupcity},${pupstate},${pupzip},${delcity},${delstate},${delzip},${payment},0.00,check,quickpay,none,open,operable,${availdate},${ldate},ladder rack and hvac tools,||||${veh}*`;
+  window.open(`mailto:${emailTo}?cc=${emailCC}&subject=${emailSub}&body=${emailBody}`, '_self');
+;
+}*/
