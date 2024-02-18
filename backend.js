@@ -1157,6 +1157,7 @@ function aaaDisclaimer() {
   document.getElementById("aaa-dispatch-approved").innerHTML = dispatchApproved;
 }
 
+/*
 function sendEmail() {
   const orderid = document.getElementById("orderid").value;
   const pupcity = document.getElementById("pucity").value;
@@ -1182,8 +1183,8 @@ function sendEmail() {
   );
   ;
 }
+*/
 
-/*
 function sendEmail() {
   const emailTo = 'cdupd-v4@centraldispatch.com'
 const emailCC = 'adriel.guallar@transitpros.com'
@@ -1202,4 +1203,4 @@ const emailSub = ''
   const emailBody = `UID(7uP58y56)*ADD*${orderid},${pupcity},${pupstate},${pupzip},${delcity},${delstate},${delzip},${payment},0.00,check,quickpay,none,open,operable,${availdate},${ldate},ladder rack and hvac tools,||||${veh}*`;
   window.open(`mailto:${emailTo}?cc=${emailCC}&subject=${emailSub}&body=${emailBody}`, '_self');
 ;
-}*/
+}
