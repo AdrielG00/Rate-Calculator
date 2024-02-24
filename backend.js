@@ -1187,7 +1187,7 @@ function sendEmail() {
 
 function sendEmail() {
   const emailTo = 'cdupd-v4@centraldispatch.com'
-const emailCC = 'adriel.guallar@transitpros.com'
+const emailCC = 'leads@transitpros.com'
 const emailSub = ''
   const orderid = document.getElementById("orderid").value;
   const pupcity = document.getElementById("pucity").value;
