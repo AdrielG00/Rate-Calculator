@@ -1,80 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>TP Non-Tow Service</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+<head></head>
+<title>TP Rate Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-    </style>
-    <link rel="stylesheet" href="ui/stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <script src="backend.js"></script>
+</style>
+
+<script src="test.js"></script>
+<link rel="stylesheet" href="ui/stylesheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="topnav">
+  
+  <div class="topnav">
       <a href="home.html">OOP/Rate Calculator</a>
-      <a href="#">Non-Tow Services</a>
+      <a href="nontow.html">Non-Tow Services</a>
       <a href="accidents.html">Accident Scene</a>
       <a href="email.html">Email Templates</a>
       <a href="dmgclaim.html">Damage Claims</a>
       <a href="clients.html">Cheat Sheets/SOPs</a>
       <a href="ersdirectory.html">ERS Directory</a>
 
+  </div>
+
+  <label for="client">Coverage:</label>
+  <select id="client">
+    <option value="other">Fully Covered</option>
+    <option value="aaa">$500 RV - AAA</option>
+    <option value="miles">Miles - With overage</option>
+    <option value="ars">ARS</option>
+    
+    
+  </select>
+
+  <label for="service-type">Service Type:</label>
+  <select id="service-type">
+    <option value="winch">Winch</option>
+    <option value="jump">Jump</option>
+    <option value="tires">Tires</option>
+  </select>
+
+  <label for="state">State (ARS Only):</label>
+  <select id="state">
+    <option value="AK">Alaska</option>
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="AZ">Arizona</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="IA">Iowa</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisana</option>
+    <option value="MA">Massachusets</option>
+    <option value="MD">Maryland</option>
+    <option value="ME">Maine</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MO">Missouri</option>
+    <option value="MS">Mississippi</option>
+    <option value="MT">Montana</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="NE">Nebraska</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NV">Nevada</option>
+    <option value="NY">New York</option>
+    <option value="OH">Ohio</option>
+    <option value=OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Caroline</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VA">Virginia</option>
+    <option value="VT">Vermont</option>
+    <option value="WA">Washington</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WV">West Virginia</option>
+    <option value="WY">Wyoming</option>
+  </select>
+
+  <label for="vehicle-type">Weight Class:</label>
+  <select id="vehicle-type">
+    <option value="ld">LD - Under 10k GVWR</option>
+    <option value="md">MD - 10k-25.9k GVWR</option>
+    <option value="hd">HD - 26k + GVWR</option>
+    <option value="md-rv">MD-RV - 30ft or less</option>
+    <option value="hd-rv">HD-RV 31+ Feet</option>
+    <option value="diesel-pusher-rv">Diesel Pusher-RV</option>
+    <option value="md">Ball Hitch</option>
+    <option value="semi-combination">Semi Combination</option>
+    <option value="truck-or-trailer-only">Tractor or Trailer Only</option>
+  </select>
+  <label for="miles">Miles:</label>
+  <input type="number" id="miles" placeholder="Enter miles">
+  <button onclick="calculate()">Calculate</button>
+  <button onclick="window.location.reload();">Reset</button>
+  <button onclick="window.location.href='rc-help.html';">How to use</button>
+
+  <div class="float-container">
+    <div class="float-child">
+
+      <text id="results">Target Price Goal: $<text id="total-cost">0.00 </text><br>
+        <text class="over-results">Over TPG by: <text id="over-tpg">$0.00</text>
     </div>
-
-
-    <div class="grid-parent">
-        <div class="grid-child"><text class="title">Jump Start:<br></text>
-            TPG: $150 <br>
-            *Motorhome & Bus* Ask how many batteries it has!<br>
-            <text class="red-text">Afterhours approval needed for over $250!</text>
-        </div>
-
-        <div class="grid-child">
-            <text class="title">Battery Replacement:</text><br>
-            TPG: $200 plus parts
-        </div>
+    <div class="float-child">
+      <text id="ars-results">ARS (Only) Paid Rate: $<text id="ars-rate">0.00</text><br>
+        <text id="aaa-coverage">AAA/ACG (RV Only) Coverage: $500</text>
     </div>
+    <div class="float-container">
+      <div class="float-child">
+        <text id="negotiate"></text>
+      </div>
+      <div class="float-child">
+        <text id="vendor-tips"></text>
+      </div>
+    </div><br>
 
 
-    <div class="grid-parent">
-        <div class="grid-child">
-            <text class="title">Transload:</text><br>
-            TPG: $150 per hour all in or under $1000.00<br>
-            <text class="red-text">Afterhours - Must get approval for anything over the above.<br>
-                Business Hours - Get approval for all quotes.</text>
-        </div>
+  </div>
 
 
-        <div class="grid-child">
-            <text class="title">Lock Out:</text><br>
-            TPG: $125<br>
-            Remember to call local locksmiths!
-        </div>
+  </div>
 
-        <div class="grid-child">
-            <text class="title">Tire Change:</text><br>
-            TPG: $125-$150
-        </div>
+  <div class="footer"><br><br>
+    <label for="miles">Vendor Quote:</label>
+    <input type="number" id="quote" placeholder="Enter quote">
+    <label for="etaMin">Vendor ETA:</label>
+    <input type="number" id="eta" placeholder="Enter ETA">
+    <button id="overage-check" onclick="overages()">Next Step</button>
+    <br>
 
+    <br>
+  </div>
+
+
+  <div class="float container">
+    <div class="float-child">AAA/ACG RV - OOP Cost: <text id="oop-cost">$0.00</text><br>
+      <text id="dispatch-disc"></text><br>
+      <button id="collect-oop" style="display: none;" onclick="collectedOOP()">OOP Breakdown</button><br>
+      <p id="oop-notes"></p>
+      <button id="aaa-disclaimer" style="display: none;" onclick="aaaDisclaimer()">Vendor Dispatch Disclaimer</button>
+      <p id="aaa-dispatch-approved"></p>
     </div>
-
-    <br><br>
-
-
-
-
-
-
+    <div class="float-child">ARS Funds Needed: <text id="add-cost">$0.00</text><br>
+      <button id="approved-funds" style="display: none;" onclick="arsAddApproval()">Funds Approved!</button><br>
+      <p id="new-ars-rate"></p><button id="ars-disclaimer" style="display: none;" onclick="disclaimer()">Dispatch
+        Disclaimer</button>
+      <p id="ars-dispatch-approved"></p>
     </div>
-    </div>
+  </div>
 
+  </div>
+
+
+  <div class="disc" id="disclaimer"></div>
+
+
+
+  </div>
 </body>
 
 </html>

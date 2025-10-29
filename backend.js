@@ -8,6 +8,11 @@ let addCost = 0;
 let newArsRate = 0;
 let totalCollected = 0;
 let profit = 0;
+let winchmdcost = 150;
+let winchhdcost = 250;
+let tirecallcost = 150;
+let jumpcost = 150;
+
 
 
 //calculates ars rate per state & tpg 
@@ -1077,7 +1082,7 @@ function getOOPFunds() {
   let addTotal3 = 0;
 
 
-  if (500 - quote < 125) {
+  if (500 - quote < 150) {
     document.getElementById("oop-cost").style.color = "red";
     addCost = quote - 500 + 150;
     ccFee = addCost * .035;
