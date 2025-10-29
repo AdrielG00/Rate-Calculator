@@ -44,7 +44,7 @@
     <option value="tow">Tow</option>
   </select>
 
-  <label for="state">State:</label>
+  <label for="state">State (ARS Only):</label>
   <select id="state">
     <option value="AK">Alaska</option>
     <option value="AL">Alabama</option>
@@ -98,16 +98,16 @@
     <option value="WY">Wyoming</option>
   </select>
 
-  <label for="vehicle-type">Vehicle Type:</label>
+  <label for="vehicle-type">Weight Class:</label>
   <select id="vehicle-type">
-    <option value="ld">LD</option>
-    <option value="md">MD</option>
-    <option value="hd">HD</option>
-    <option value="md-rv">MD-RV</option>
-    <option value="hd-rv">HD-RV</option>
+    <option value="ld">LD - Under 10k GVWR</option>
+    <option value="md">MD - 10k-25.9k GVWR</option>
+    <option value="hd">HD - 26k + GVWR</option>
+    <option value="md-rv">MD-RV - 30ft or less</option>
+    <option value="hd-rv">HD-RV 31+ Feet</option>
     <option value="diesel-pusher-rv">Diesel Pusher-RV</option>
     <option value="semi-combination">Semi Combination</option>
-    <option value="truck-or-trailer-only">Truck or Trailer Only</option>
+    <option value="truck-or-trailer-only">Tractor or Trailer Only</option>
   </select>
   <label for="miles">Miles:</label>
   <input type="number" id="miles" placeholder="Enter miles">
@@ -122,8 +122,8 @@
         <text class="over-results">Over TPG by: <text id="over-tpg">$0.00</text>
     </div>
     <div class="float-child">
-      <text id="ars-results">ARS Paid Rate: $<text id="ars-rate">0.00</text><br>
-        <text id="aaa-coverage">AAA Coverage: $500</text>
+      <text id="ars-results">ARS (Only) Paid Rate: $<text id="ars-rate">0.00</text><br>
+        <text id="aaa-coverage">AAA/ACG (RV Only) Coverage: $500</text>
     </div>
     <div class="float-container">
       <div class="float-child">
@@ -145,7 +145,7 @@
     <input type="number" id="quote" placeholder="Enter quote">
     <label for="etaMin">Vendor ETA:</label>
     <input type="number" id="eta" placeholder="Enter ETA">
-    <button id="overage-check" onclick="overages()">Check for Overages</button>
+    <button id="overage-check" onclick="overages()">Next Step</button>
     <br>
 
     <br>
@@ -153,11 +153,11 @@
 
 
   <div class="float container">
-    <div class="float-child">AAA OOP Cost: <text id="oop-cost">$0.00</text><br>
+    <div class="float-child">AAA/ACG RV - OOP Cost: <text id="oop-cost">$0.00</text><br>
       <text id="dispatch-disc"></text><br>
-      <button id="collect-oop" style="display: none;" onclick="collectedOOP()">OOP Funds Collected!</button><br>
+      <button id="collect-oop" style="display: none;" onclick="collectedOOP()">OOP Breakdown</button><br>
       <p id="oop-notes"></p>
-      <button id="aaa-disclaimer" style="display: none;" onclick="aaaDisclaimer()">Dispatch Disclaimer</button>
+      <button id="aaa-disclaimer" style="display: none;" onclick="aaaDisclaimer()">Vendor Dispatch Disclaimer</button>
       <p id="aaa-dispatch-approved"></p>
     </div>
     <div class="float-child">ARS Funds Needed: <text id="add-cost">$0.00</text><br>
