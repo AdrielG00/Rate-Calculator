@@ -1051,8 +1051,8 @@ function getAdditionalFunds() {
     localStorage.removeItem("aaaoop");
     document.getElementById("add-cost").style.color = "green";
     addTotal = `No Additional Funds needed - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move. <br><br> 
-    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
     All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
 
   }
@@ -1101,8 +1101,8 @@ function getOOPFunds() {
     document.getElementById("add-cost").style.color = "black";
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
-    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
     All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
   }
   document.getElementById("oop-cost").innerHTML = oopCost;
@@ -1136,8 +1136,8 @@ function get2POFunds() {
     document.getElementById("add-cost").style.color = "black";
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
-    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
     All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
   }
   document.getElementById("oop-cost").innerHTML = oopCost;
@@ -1202,8 +1202,8 @@ function get100MileOverage() {
     document.getElementById("add-cost").style.color = "black";
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
-    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
     All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
   }
   document.getElementById("oop-cost").innerHTML = oopCost;
@@ -1266,8 +1266,8 @@ function get200MileOverage() {
     document.getElementById("add-cost").style.color = "black";
     document.getElementById("oop-cost").style.color = "green";
     oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
-    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
     All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
   }
   document.getElementById("oop-cost").innerHTML = oopCost;
@@ -1288,7 +1288,7 @@ function collectedOOP() {
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
   AAA Coverage = $1000 ($500 Per PO for RVs)<br>
-  OOP Collected: ${oopCost}<br> `;
+  OOP Cost: ${oopCost}<br> `;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
 }
@@ -1300,7 +1300,7 @@ function collectedOOP() {
   Vendor Cost = $${quote}<br>
   AAA Coverage = ${client} Coverage (${miles} Mile Tow)<br>
   Weight Class: ${weightClass}<br>
-  OOP Collected: ${oopCost}<br>`;
+  OOP Cost: ${oopCost}<br>`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
   }
@@ -1310,7 +1310,7 @@ else {
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
   AAA Coverage = $500 (Per PO for RVs)<br>
-  OOP Collected: ${oopCost}`;
+  OOP Cost: ${oopCost}`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
 }
@@ -1344,8 +1344,8 @@ function overages() {
       document.getElementById("add-cost").innerHTML = addTotal;
       document.getElementById("add-cost").style.color = "black";
       dispatchDisclaimer = `If you are over TPG - Make sure you get quote approval from a Team Lead or Management.  If not, Make sure to verbally state your disclaimer and send it along with the email.<br><br>*Confirm all in cost, equipment and all logistics and properly notate the move. <br><br> 
-      We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-      Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+      We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+      Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
       All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
       break;
   }
@@ -1359,8 +1359,8 @@ function disclaimer() {
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
   const client = document.getElementById("client").value;
   const eta = document.getElementById("eta").value;
-  dispatchApproved = `We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-  Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+  dispatchApproved = `We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+  Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
   All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.<br>
   Thank you!<br><br>**Make sure the vendor received the paperwork!<br>**Make sure to update the customer/client on ETA!<br>**Make sure to note any important details in the move!`;
   document.getElementById("ars-dispatch-approved").innerHTML = dispatchApproved;
@@ -1370,8 +1370,8 @@ function aaaDisclaimer() {
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
   const client = document.getElementById("client").value;
   const eta = document.getElementById("eta").value;
-  dispatchApproved = `We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
-  Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+  dispatchApproved = `We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. <br>
+  Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
   All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
   document.getElementById("aaa-dispatch-approved").innerHTML = dispatchApproved;
 }
