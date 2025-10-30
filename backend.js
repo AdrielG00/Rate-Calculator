@@ -1110,6 +1110,135 @@ function getOOPFunds() {
   document.getElementById("add-cost").style.color = "black";
 }
 
+//function to calculate AAA OOP and reset ARS data - button for aaa approval
+function get100MileOverage() {
+    const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+   const miles = parseFloat(document.getElementById("miles").value).toFixed(2);
+  const vehicleType = document.getElementById("vehicle-type").value;
+  const eta = document.getElementById("eta").value;
+  let addTotal3 = 0;
+  let overage = miles - 100;
+
+
+  if (miles > 100) {
+    switch (vehicleType) {
+      case "ld":
+        total = overage * 6;
+        break;
+      case "md":
+        total = overage * 7;
+        break;
+      case "hd":
+        total = overage * 8;
+        break;
+      case "md-rv":
+        total = overage * 7;
+        break;
+      case "hd-rv":
+        total = overage * 8;
+        break;
+      case "diesel-pusher-rv":
+        total = overage * 8;
+        break;
+      case "semi-combination":
+        total = overage * 8;
+        break;
+      case "truck-or-trailer-only":
+        total = overage * 8;
+    break;
+      default:
+        break;
+    }
+
+    addCost = total;
+    ccFee = addCost * .035;
+    addTotal3 = addCost + ccFee;
+    oopCost = `$` + `${addTotal3.toFixed(2)}`;
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("collect-oop").style.display = "";
+    totalCollected = addTotal3 + 500;
+  }
+  else {
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("oop-cost").style.color = "green";
+    oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
+  }
+  document.getElementById("oop-cost").innerHTML = oopCost;
+  document.getElementById("add-cost").innerHTML = addTotal;
+  document.getElementById("add-cost").style.color = "black";
+  }
+//function to calculate AAA OOP and reset ARS data - button for aaa approval
+function get200MileOverage() {
+    const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+   const miles = parseFloat(document.getElementById("miles").value).toFixed(2);
+  const vehicleType = document.getElementById("vehicle-type").value;
+  const eta = document.getElementById("eta").value;
+  let addTotal3 = 0;
+  let overage = miles - 200;
+
+
+  if (miles > 200) {
+    switch (vehicleType) {
+      case "ld":
+        total = overage * 6;
+        break;
+      case "md":
+        total = overage * 7;
+        break;
+      case "hd":
+        total = overage * 8;
+        break;
+      case "md-rv":
+        total = overage * 7;
+        break;
+      case "hd-rv":
+        total = overage * 8;
+        break;
+      case "diesel-pusher-rv":
+        total = overage * 8;
+        break;
+      case "semi-combination":
+        total = overage * 8;
+        break;
+      case "truck-or-trailer-only":
+        total = overage * 8;
+    break;
+      default:
+        break;
+    }
+
+    addCost = total;
+    ccFee = addCost * .035;
+    addTotal3 = addCost + ccFee;
+    oopCost = `$` + `${addTotal3.toFixed(2)}`;
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("collect-oop").style.display = "";
+    totalCollected = addTotal3 + 500;
+  }
+  else {
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("oop-cost").style.color = "green";
+    oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
+  }
+  document.getElementById("oop-cost").innerHTML = oopCost;
+  document.getElementById("add-cost").innerHTML = addTotal;
+  document.getElementById("add-cost").style.color = "black";
+  }
+
 function collectedOOP() {
   const addCost = document.getElementById("oop-cost");
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
@@ -1135,6 +1264,12 @@ function overages() {
       break;
     case "aaa":
       getOOPFunds();
+      break;
+    case "100miles":
+      get100MileOverage();
+      break;
+        case "200miles":
+      get200MileOverage();
       break;
     case "other":
       addTotal = "0.00";
