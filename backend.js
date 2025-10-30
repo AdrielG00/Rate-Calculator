@@ -1278,29 +1278,39 @@ function get200MileOverage() {
 function collectedOOP() {
   const addCost = document.getElementById("oop-cost");
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+   const miles = document.getElementById("miles").value;
+   const weightClass = document.getElementById("vehicle-type").value;
   const client = document.getElementById("client").value;
 
-  if (client === "2po"){
+  if (client === "1000"){
   profit = totalCollected - quote;
   profitMargin = profit.toFixed(2);
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
   AAA Coverage = $1000 ($500 Per PO for RVs)<br>
-  OOP Collected: ${oopCost}<br> 
-  Total Billing: $${totalCollected.toFixed(2)}<br>
-  Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
+  OOP Collected: ${oopCost}<br> `;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
 }
+  if (client === "100-Mile" || "200-Mile")
+    {
+  profit = totalCollected - quote;
+  profitMargin = profit.toFixed(2);
+  oopCollectedNotes = `
+  Vendor Cost = $${quote}<br>
+  AAA Coverage = ${client} Coverage (${miles} Mile Tow)<br>
+  Weight Class: ${weightClass}<br>
+  OOP Collected: ${oopCost}<br>`;
+  document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
+  document.getElementById("aaa-disclaimer").style.display = "";
+  }
 else {
   profit = totalCollected - quote;
   profitMargin = profit.toFixed(2);
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
   AAA Coverage = $500 (Per PO for RVs)<br>
-  OOP Collected: ${oopCost}<br> 
-  Total Billing: $${totalCollected.toFixed(2)}<br>
-  Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
+  OOP Collected: ${oopCost}`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
 }
@@ -1314,17 +1324,17 @@ function overages() {
     case "ars":
       getAdditionalFunds();
       break;
-    case "aaa":
+    case "500":
       getOOPFunds();
       break;
-    case "100miles":
+              case "1000":
+      get2POFunds();
+      break;
+    case "100-Mile":
       get100MileOverage();
       break;
-        case "200miles":
+        case "200-Mile":
       get200MileOverage();
-      break;
-        case "2po":
-      get2POFunds();
       break;
     case "other":
       addTotal = "0.00";
