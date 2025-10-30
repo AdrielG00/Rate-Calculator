@@ -1109,8 +1109,44 @@ function getOOPFunds() {
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("add-cost").style.color = "black";
 }
+//function to calculate AAA OOP on 2 POs and reset ARS button
+function get2POFunds() {
+  const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  const client = document.getElementById("client").value;
+  const eta = document.getElementById("eta").value;
+  let addTotal3 = 0;
 
-//function to calculate AAA OOP and reset ARS data - button for aaa approval
+
+  if (1000 - quote < 150) {
+    document.getElementById("oop-cost").style.color = "red";
+    addCost = quote - 1000 + 150;
+    ccFee = addCost * .035;
+    addTotal3 = addCost + ccFee;
+    oopCost = `$` + `${addTotal3.toFixed(2)}`;
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("collect-oop").style.display = "";
+    totalCollected = addTotal3 + 1000;
+
+  }
+  else {
+    addTotal = "0.00";
+    dispatchDisclaimer = "";
+    document.getElementById("add-cost").style.color = "black";
+    document.getElementById("oop-cost").style.color = "green";
+    oopCost = `No OOP Costs - Proceed with dispatch.  Make sure to verbally state your disclaimer and send it along with the email.<br>*Confirm all in cost, equipment and all logistics and properly notate the move.  <br><br> 
+    We are dispatching this unit for tow for $${quote} including all taxes and fees with an ETA of ${eta} minutes as discussed. If anything is other than described, additional services requested or any changes that would affect cost, please make sure to call 877-390-7673 for prior approval. *Pre-approval is required for all requests - do NOT proceed with any additional services without Transit Pros authorization.  <br> 
+    Please keep us updated should your ETA change for whatever reason so that we may keep our customer informed.  On delivery - please e-sign our invoice or submit an invoice to ersinvoice@transitpros.com for prompt payment processing.<br> 
+    All GOA requests require notification while the driver is on scene along with photos submitted to ers@transitpros.com.`;
+  }
+  document.getElementById("oop-cost").innerHTML = oopCost;
+  document.getElementById("add-cost").innerHTML = addTotal;
+  document.getElementById("add-cost").style.color = "black";
+}
+
+
+//function to calculate AAA OOP for 100 miles and reset ARS data - button for aaa approval
 function get100MileOverage() {
     const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
    const miles = parseFloat(document.getElementById("miles").value).toFixed(2);
@@ -1174,7 +1210,7 @@ function get100MileOverage() {
   document.getElementById("add-cost").innerHTML = addTotal;
   document.getElementById("add-cost").style.color = "black";
   }
-//function to calculate AAA OOP and reset ARS data - button for aaa approval
+//function to calculate AAA OOP for 200 miles and reset ARS data - button for aaa approval
 function get200MileOverage() {
     const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
    const miles = parseFloat(document.getElementById("miles").value).toFixed(2);
@@ -1242,16 +1278,32 @@ function get200MileOverage() {
 function collectedOOP() {
   const addCost = document.getElementById("oop-cost");
   const quote = parseFloat(document.getElementById("quote").value).toFixed(2);
+  const client = document.getElementById("client").value;
+
+  if (client === "2po"){
   profit = totalCollected - quote;
   profitMargin = profit.toFixed(2);
   oopCollectedNotes = `
   Vendor Cost = $${quote}<br>
-  AAA Coverage = $500 (only for RV legacy customers)<br>
+  AAA Coverage = $1000 ($500 Per PO for RVs)<br>
   OOP Collected: ${oopCost}<br> 
   Total Billing: $${totalCollected.toFixed(2)}<br>
   Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
   document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
   document.getElementById("aaa-disclaimer").style.display = "";
+}
+else {
+  profit = totalCollected - quote;
+  profitMargin = profit.toFixed(2);
+  oopCollectedNotes = `
+  Vendor Cost = $${quote}<br>
+  AAA Coverage = $500 (Per PO for RVs)<br>
+  OOP Collected: ${oopCost}<br> 
+  Total Billing: $${totalCollected.toFixed(2)}<br>
+  Profit: $${profitMargin} ($150 + CC Fee of $${ccFee.toFixed(2)})`;
+  document.getElementById("oop-notes").innerHTML = oopCollectedNotes;
+  document.getElementById("aaa-disclaimer").style.display = "";
+}
 }
 
 function overages() {
@@ -1270,6 +1322,9 @@ function overages() {
       break;
         case "200miles":
       get200MileOverage();
+      break;
+        case "2po":
+      get2POFunds();
       break;
     case "other":
       addTotal = "0.00";
