@@ -18,16 +18,13 @@
 <body>
 
     <div class="topnav">
-        <a href="home.html">Rate Calculator</a>
-        <a href="nontow.html">Non-Tow Services</a>
-        <a href="centraladd.html">Central</a>
-        <a href="email.html">Email Updates</a>
-        <a href="templates.html">Templates</a>
-        <a href="#">Dispatching</a>
-        <a href="accidents.html">Accident Scene</a>
-        <a href="dmgclaim.html">Damage Claims</a>
-        <a href="clients.html">Client Cheat Sheets</a>
-        <a href="ersdirectory.html">ERS Directory</a>
+      <a href="home.html">OOP/Rate Calculator</a>
+      <a href="nontow.html">Non-Tow Services</a>
+      <a href="accidents.html">Accident Scene</a>
+      <a href="email.html">Email Updates</a>
+      <a href="email-rqst.html">Email - Templates</a>
+      <a href="clients.html">Cheat Sheets/SOPs</a>
+      <a href="ersdirectory.html">ERS Directory</a>
 
     </div>
 
@@ -37,36 +34,19 @@
             <text class="red-text-accident">"How do I know if a vendor has been paid?"</text><br>
             <div class="grid-parent">
                 <div class="grid-child"><text class="red-text"> 1. Examine the move details after being marked delivered</text><br><img
-                        src="ui/INQ-completepaid.png" width="1025"><br>This move has been completed, invoiced and
-                    paid.<br>Notes named <text class="red-text">"Vendor Invoice"</text> are related to us requesting an
-                    esignature to our invoice- not that we have submitted payment.<br><text class="red-text">"Vendor
-                        Bill" and "Vendor Card Created"</text> indicate that a payment was generated and sent to the
-                    vendor. <br>Here you can see the move go from Delivered, to us requesting an invoice, the vendor
-                    signing the invoice and then the invoice being paid.<br><br><br>
-                    <text class="red-text">2. If no payment has been issued - look for an invoice or esignature.</text><br><img
-                        src="ui/INQ-vendorsigned.png" width="1025"><br>In the <text class="red-text">AP/AR tab</text> - you'll see a green pencil that
-                    will show the vendor signed when you hover over it.<br>This indicates the vendor e-signed our
-                    invoice and payment should have been processed.<br><br><img src="ui/INQ-vendorinvoiced.png"
+                        src="ui/movepaid.jpg" width="1025"><br>This move has been completed, invoiced and
+                    paid.<br>Notes in YELLOW named <text class="red-text">"VENDOR INVOICE"</text> are related to us requesting an
+                    esignature to our invoice- not that we have submitted payment.  Once a move is marked completed - the vendor receives an email from us which is a rate confirmation / invoice for them to sign for payment.  ONLY vendors with an SSTA will be able to sign this.  All other vendors must send an invoice to ersinvoice@transitpros.com for payment processing.<br><br>Notes in BLUE named <text class="red-text">"FILES"</text> indicate that a vendor invoice has been uploaded into the move.  The move is ready to be paid if vendor invoice aligns with cost documented by TP.<br><br>
+                    Notes in GREEN named <text class="red-text">"VENDOR BILL"</text> show that "PAUL DONCE" e-signed our invoice and this move is ready to be paid.  Again - only vendors with an SSTA will be able to do this.  Do not request that leads resend an esignature link because the vendor is unable to sign UNLESS the vendor has an SSTA agreement.<br><br>Notes in RED named <text class="red-text">"VENDOR BILL"</text> indicate that a payment was submitted by Transit Pros for $350 on 10/30 at 2:09PM and was sent to nextleveltowing1@gmail.com.  This payment remittance would come directly from commerce bank and NOT a Transit Pros email.  If you do NOT see this note with "AMS" in it - the move has NOT been paid.  Make sure the vendor checks their spam and only email leads if they are unable to find the payment email.<br><br>
+                    <text class="red-text">2. If no payment has been issued - look for an invoice or esignature.</text><br><img src="ui/INQ-vendorinvoiced.png"
                         width="1025"><br>You can also check the <text class="red-text">"Files" tab</text> and see if we manually uploaded an invoice
                     from the vendor.<br><br>If either of these are present - payment should be processing within 24-48
                     hours of being invoiced. <br>If the vendor has waited more than 24-48 hours for payment - send an
                     email to <text class="red-text">leads@transitpros.com</text> with these details.<br><br><br>
-                    <text class="red-text">3. If we haven't received an invoice</text><br><img src="ui/INQ-noinvoice1.png" width="1025"><br>Here you can see the move was marked delivered and our system sent out an invoice to be signed.<br>This move has not been paid because we do not have a signed invoice.<br>Once the vendor signs, the system will notate that the invoice was signed and by who.<br><br>
+                    <text class="red-text">3. If we haven't received an invoice</text><br><img src="ui/INQ-noinvoice1.png" width="1025"><br>Here you can see the move was marked delivered and our system sent out an invoice to be signed (if vendor has an SSTA).  You can also see there is no invoice uploaded to the move after it was marked delivered.<br>This move has not been paid because we do not have a signature or invoice.<br>Once the vendor signs or emails an invoice, the system will then allow accounting to process a payment.<br><br>
                     If you look in the <text class="red-text">"Files" Tab</text> you will see that an invoice has not been manually uploaded either.<br><img src="ui/INQ-noinvoice2.png" width="1025"><br>
-                    <br><img src="ui/INQ-noinvoice3.png" width="1025"><br>We can manually resend the invoice to be signed in the "AP/AR" tab by clicking the letter icon.<br>
-                    6. Once you click "Check for Overages" - the program will calculate if any additional funds will be
-                    needed from ARS in order to proceed. <br>This is ONLY for fully covered vehicles, if the CX has a
-                    "partial
-                    coverage" - calculate the OOP MANUALLY. <br>In this case, the Vendor Quote is within ARS rates and
-                    within TP profit minimum. <br>This will trigger the dispatch disclaimer and tell you to proceed with
-                    your
-                    dispatch as no additional funding is needed.<img src="ui/INQ-noinvoice4.png" width="1025"><br>
-                    7. Lets say the VQ was $375 instead - it will kick back a red colored result showing $88.70 in
-                    additional funding needed to proceed.<br> As you can see, no dispatch disclaimer is populated
-                    therefore you
-                    are not authorized to proceed with the dispatch. <br>This will trigger a "FUNDS APPROVED" button
-                    directly
-                    under the amount. 
+                    <br>
+                
 
 
         </center>
