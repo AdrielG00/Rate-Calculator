@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TP Accident Protocol</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="ui/stylesheet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <script src="backend.js">
+    document.getElementById("result").innerHTML = localStorage.getItem("arsAdd"); //ehhhh
+
+  </script>
+</head>
+
+<body>
+
+  <div class="topnav">
+      <a href="home.html">OOP/Rate Calculator</a>
+      <a href="nontow.html">Non-Tow Services</a>
+      <a href="accidents.html">Accident Scene</a>
+      <a href="spc.html">Specialty</a>
+      <a href="email.html">Email Updates</a>
+      <a href="email-rqst.html">ERS - Templates</a>
+      <a href="clients.html">Cheat Sheets/SOPs</a>
+      <a href="help.html">FAQ/Common Issues</a>
+      <a href="ersdirectory.html">ERS Directory</a>
+
+  </div>
+
+   <div class="content">
+    <p class="title">&emsp;&emsp;&emsp;Specialty Overview:</p><BR>
+    <p class="title">Intake:</p>
+    A request is sent via email with the general information needed to gather a quote.  When building the intake - the following must be included in every intake. <br>
+    *Step 2 - Special Instructions: <br>
+    "*No payment will be issued without the following*<br>
+    1-Photos of where the keys were left.  If there are no keys with the unit - Transit Pros must be notified prior to pickup for authorization. A rekey fee of $150 will be deducted from total pay if this is not provided.<br>
+    2-Photos of the driveshaft and all bolts on the floorboard(if driveshaft required removal).<br>
+    3-A detailed condition report with supporting photos.<br>
+    4-Signed or Stamped release document provided in dispatch email."<br><br>
+
+    *A Copy of the Transit Pros Condition Report must be uploaded into Files: Misc. <br>
+    *PO must contain the word "Quote-" prior to the Stock/FLD#.<br>
+    *A VIN# must be present within the damage details or special instructions for the vendor. <br>
+    *Step 2 must be filled using the details provided and details gathered using the VIN #<br>
+    *All photos provided must be uploaded into the move. <br>
+    *The original intake email must be pasted into the move notes under the header "Client Intake"<br><br><br>
+
+      <p class="title">Once the move is built:</p>
+    1- Change date filter on Master Move list to 2020 and fill in the pickup location ZIP code to search completed moves.<br>
+    *If this route has been done by a vendor multiple times - call that vendor to confirm their rate would be the same and an ETA.<br><br>
+    2- If no similar moves - look up the delivery zip code and search for moves with similar mileage or near the pickup area.<br>
+    *If this delivery is being frequented a specific vendor - call that vendor to confirm their rate.<br><br>
+    3- If you do not have an option to present a lead based on previous moves - filter the vendor list accordingly based on mileage and put the move out to bid for 3 hours.<br><br>
+
+    <p class="title">Once a Vendor quote is approved by a lead:</p>
+     1- Use the client quote template to provide a quote to the client.<br><br>
+     "Hello,<br>
+    Please see below and advise if approved: <br><br>
+
+    ***STOCK # / PO # / CLAIM #***: $__.__ <br>
+    Mileage: __ <br>
+    Equipment: __ <br><br>
+    Let us know if this is approved and we will plan accordingly."<br><br>
+     2- Notate the vendor name, vendor quote and client quote using the specialty template.<br>
+     3- Update the client quote in the details tab to match the quoted rate to client.<br>
+     4- Change the move to "Hold" status and notate "Pending Approval" along with the vendor's name.<br><br>
+
+          <p class="title">Once the client approves a quote:</p>
+    1- Upload the PDF Release provided by the client in the approval email under Files - Misc.<br>
+    2- Update the POC Name, Number, PL Location Name and any special instructions provided for contact.<br>
+    3- Remove "Quote-" from the PO.<br>
+    4- Copy the damage details/special instructions in the approval paperwork onto the damage details for Step 2.<br>
+    5- Attempt to call the pickup location for a step 2.  A complete step 2 should include the following:<br>
+    &emsp;&emsp;&emsp;Is the unit released and ready for pickup?  No balance due?<BR>
+    &emsp;&emsp;&emsp;Hours of Operation and any lead time needed for scheduling<BR>
+    &emsp;&emsp;&emsp;Are there keys with the unit?<BR>
+    &emsp;&emsp;&emsp;All damage details provided need confirmed<BR>
+    &emsp;&emsp;&emsp;Is the driveshaft connected?<BR>
+    &emsp;&emsp;&emsp;Is the unit blocked in or accessible for us to hook and go?<BR>
+    &emsp;&emsp;&emsp;Are the tires roadworthy? Holding air? No signs of dry rot or cracking?<BR>
+    6- If no answer - notate your attempt and for a next attempt to tried in 3 hours. If step is completed - reach out to the vendor to get the pickup scheduled.  Relay all special instructions that were gathered during step 2. <br>
+    7- If dispatching a vendor - the specialty disclaimer must be read verbally prior to sending any paperwork.
+
+    &emsp;&emsp;&emsp;Specialty Disclaimer: <BR><br>
+      We are dispatching this tow for [QUOTE] all-inclusive with an ETA of [date with time ONLY if applicable] as discussed. Pre-Approval is required for all additional funds requests - If anything is other than described, additional services requested or any other changes that would affect cost, please call for prior approval.<br>
+      *All GOA requests require notification while the driver is on scene along with photos of equipment on scene submitted to specialty@transitpros.com.<br>
+      *No payment will be issued without the following 4 requirements*<br>
+      1- Photos of where the keys were left.  If there are no keys with the unit - Transit Pros must be notified prior to pickup for authorization. A rekey fee of $150 will be deducted from total pay if this is not provided.<br>
+      2- Photos of the driveshaft and all bolts on the floorboard(if driveshaft required removal).<br>
+      3- A detailed condition report with a minimum of 4 corner supporting photos.<br>
+      4- Signed or Stamped release document provided in dispatch email."<br><br>
+
+            <p class="title">Once a move is assigned:</p>
+    1- CSR must attempt to schedule all appointments regardless of notifying carrier of special instructions - Pickup and Delivery must be called with an update.  *It is the duty of the assigned agent to do everything possible to minimize the chances of a dry run.<br>
+    2- Client must be updated with ETA.<br>
+    3- Move must be properly notated with who the CSR spoke to at both locations,<br>
+    4- Move must be properly notated with the next follow up - 24hrs prior to pickup to confirm on schedule.<br>
+    <BR><br>
+
+  </div>
+  </div>
+
+</body>
+
+</html>
