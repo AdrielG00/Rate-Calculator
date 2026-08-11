@@ -1084,9 +1084,9 @@ function getOOPFunds() {
   let addTotal3 = 0;
 
 
-  if (500 - quote < 150) {
+  if (500 - quote < 200) {
     document.getElementById("oop-cost").style.color = "red";
-    addCost = quote - 500 + 150;
+    addCost = quote - 500 + 200;
     ccFee = addCost * .035;
     addTotal3 = addCost + ccFee;
     oopCost = `$` + `${addTotal3.toFixed(2)}`;
@@ -1121,9 +1121,9 @@ function get2POFunds() {
   let addTotal3 = 0;
 
 
-  if (1000 - quote < 150) {
+  if (1000 - quote < 200) {
     document.getElementById("oop-cost").style.color = "red";
-    addCost = quote - 1000 + 150;
+    addCost = quote - 1000 + 200;
     ccFee = addCost * .035;
     addTotal3 = addCost + ccFee;
     oopCost = `$` + `${addTotal3.toFixed(2)}`;
